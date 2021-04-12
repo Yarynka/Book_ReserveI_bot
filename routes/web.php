@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 Route::post('/telegram/webhook','App\Http\Controllers\TelegramController@Webhook');
 Route::get('/', 'App\Http\Controllers\MainController@index')->name('mainPage');
 Route::group(['prefix' => '/books'], function () {
-    Route::get('open-{method}', 'App\Http\Controllers\MainController@openIndex')->name('index.books');
+    Route::get('/open-{method}', 'App\Http\Controllers\MainController@openIndex')->name('index.books');
+    Route::post('/create', 'App\Http\Controllers\MainController@create')->name('create.books');
+    Route::post('/update', 'App\Http\Controllers\MainController@update')->name('return.books');
 });
 Route::get('/thank', 'App\Http\Controllers\MainController@create');
 Route::get('/thank-you', 'App\Http\Controllers\MainController@update');

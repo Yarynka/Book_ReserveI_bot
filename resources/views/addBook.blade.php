@@ -105,17 +105,18 @@
         </style>
     </head>
     <body >
-        <form action="" class="books">
+        <form action="{{route('create.books')}}" method="POST" class="books">
+            {{csrf_field()}}
             <div class="form-inner">
                 <p style=" font-size: 30px;">Оберіть книгу</p>
                 <div class="form-content">
-                    <p>Прізвище<input type="text" name="your-name" ></p>
-                    <p>Ім'я<input type="text" name="your-name" ></p>
-                    <p>Псевдонім<input type="text" name="your-name" ></p>
+                    <p>Прізвище<input type="text" name="surname" ></p>
+                    <p>Ім'я<input type="text" name="name" ></p>
+                    <p>Псевдонім<input type="text" name="username" ></p>
                     <h3>Книга:</h3>
                     <p>
                     @if(isset($books))
-                        <select name="guests" style="width: 100%;">
+                        <select name="book_id" style="width: 100%;">
                             @foreach($books as $book)
                                 <option value="{{$book->id}}">{{$book->title ?? 'Помилка з назвою'}}</option>
                             @endforeach

@@ -105,14 +105,15 @@
         </style>
     </head>
     <body >
-        <form action="" class="books">
+        <form action="{{route('return.books')}}" method="POST" class="books">
+            {{csrf_field()}}
             <div class="form-inner">
                 <p style=" font-size: 30px;">Повернути книгу</p>
                 <div class="form-content">
                     <h3>Книга:</h3>
                     <p>
                     @if(isset($books) && count($books)>0)
-                        <select name="guests" style="width: 100%;">
+                        <select name="book_id" style="width: 100%;">
                             @foreach($books as $book)
                                 <option value="{{$book->id}}">{{$book->title ?? 'Помилка з назвою'}}</option>
                             @endforeach

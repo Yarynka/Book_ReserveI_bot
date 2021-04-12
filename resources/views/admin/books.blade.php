@@ -173,6 +173,7 @@
     @if(isset($books) && count($books)>0)
         <table class="table_blur">
             <tr>
+                <th>ID</th>
                 <th>Назва книги</th>
                 <th>Автор книги</th>
                 <th>Книга</th>
@@ -180,6 +181,7 @@
             </tr>
             @foreach($books as $book)
                 <tr>
+                    <td>{{$book->id}}</td>
                     <td>{{$book->title ?? 'Немає title'}}</td>
                     <td>{{$book->author ?? 'Немає author'}}</td>
                     <td>{{$book->active ? 'Вільна' : 'Зарезервована'}}</td>{{-- офіс або людина --}}
