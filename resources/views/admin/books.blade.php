@@ -183,7 +183,7 @@
                     <td>{{$book->title ?? 'Немає title'}}</td>
                     <td>{{$book->author ?? 'Немає author'}}</td>
                     <td>{{$book->active ? 'Вільна' : 'Зарезервована'}}</td>{{-- офіс або людина --}}
-                    <td>{{$book->active ? 'Офіс' : ''}}</td>
+                    <td>{{$book->user->name }}</td>
                 </tr>
             @endforeach
         </table>

@@ -13,12 +13,15 @@ class CreateTelegramInfo extends Migration
      */
     public function up()
     {
-        Schema::create('telegram_info', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger('chat_id');
-            $table->text('telegram_info')->comment('Json Info with telegram');
-            $table->timestamps();
-        });
+
+        if(!Schema::hasTable('telegram_info')) {
+            Schema::create('telegram_info', function (Blueprint $table) {
+                $table->id();
+                $table->bigInteger('chat_id');
+                $table->text('telegram_info')->comment('Json Info with telegram');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

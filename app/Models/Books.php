@@ -8,5 +8,9 @@ class Books extends Model
 {
     protected $table="books";
 
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id','user_id');
+    }
 
 }
