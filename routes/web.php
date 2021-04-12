@@ -10,6 +10,7 @@
 |
 */
 
+//use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/telegram/webhook','App\Http\Controllers\TelegramController@Webhook');
@@ -23,7 +24,7 @@ Route::get('/thank', 'App\Http\Controllers\MainController@create');
 Route::get('/thank-you', 'App\Http\Controllers\MainController@update');
 
 
-
+//Auth::routes();
 
 
 
@@ -42,3 +43,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
