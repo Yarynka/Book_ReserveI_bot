@@ -18,6 +18,8 @@ class CreateTelegramInfo extends Migration
             Schema::create('telegram_info', function (Blueprint $table) {
                 $table->id();
                 $table->bigInteger('chat_id');
+                $table->unsignedBigInteger('user_id');
+                $table->foreign('user_id')->references('id')->on('users');
                 $table->text('telegram_info')->comment('Json Info with telegram');
                 $table->timestamps();
             });

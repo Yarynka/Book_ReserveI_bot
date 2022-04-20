@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\TelegramInfo;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Telegram\Bot\Laravel\Facades\Telegram;
@@ -11,7 +13,9 @@ class TelegramController extends Controller
 {
 
     public function Webhook(Request $request){
-        Log::error($request->all());
+        Log::error($request['']);
+//        if(User::where('telegram_id',''))
+//        TelegramInfo::create(,1);
     }
     public function test(){
         dd(Telegram::getUpdates());
