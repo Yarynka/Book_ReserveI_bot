@@ -26,7 +26,7 @@ Route::get('/thank-you', 'App\Http\Controllers\MainController@update');
 
 //Auth::routes();
 
-
+//test
 
 
 Route::group(['prefix' => 'admin'], function () {
